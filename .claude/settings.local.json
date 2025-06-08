@@ -10,7 +10,11 @@
       "Bash(rails new:*)",
       "Bash(bundle:*)",
       "Bash(rails generate:*)",
-      "Bash(brew install:*)"
+      "Bash(brew install:*)",
+      "Bash(npx shadcn@latest init:*)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest add:*)"
     ],
     "deny": []
   },

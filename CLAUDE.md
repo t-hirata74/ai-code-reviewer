@@ -95,23 +95,56 @@ Rails 7.1のAPIアプリケーションを以下の機能でセットアップ�
 
 ### 3. フロントエンド（Next.js）のセットアップ
 ```
-# Task
-Set up Next.js 14 application with:
-1. App Router configuration
-2. shadcn/ui integration
-3. TanStack Query setup
-4. Basic dashboard layout
-5. GitHub OAuth integration
+# タスク
+Next.js 14アプリケーションを以下の機能でセットアップ：
+1. App Routerの設定
+   - 新しいApp Routerによるルーティング
+   - サーバーコンポーネントの活用
+   - ファイルベースのルーティング
 
-# Context
-- Next.js 14 with App Router
+2. shadcn/uiの統合
+   - モダンなUIコンポーネントの導入
+   - カスタマイズ可能なデザインシステム
+   - アクセシビリティ対応
+
+3. TanStack Queryの設定
+   - データフェッチングの最適化
+   - キャッシュ管理
+   - サーバー状態の管理
+
+4. 基本的なダッシュボードレイアウト
+   - レスポンシブデザイン
+   - コードレビュー結果の表示
+   - ユーザーインターフェースの構築
+
+5. GitHub OAuth統合
+   - GitHub認証の実装
+   - ユーザーセッション管理
+   - アクセストークンの処理
+
+# 技術スタック
+- Next.js 14（App Router）
+  - 最新のNext.js機能を活用
+  - サーバーサイドレンダリング
+
 - TypeScript
-- shadcn/ui for components
-- TanStack Query for data fetching
-- SSG + SSR hybrid approach
+  - 型安全性の確保
+  - 開発効率の向上
 
-# Output format
-Only code. No explanations.
+- shadcn/ui
+  - 再利用可能なコンポーネント
+  - モダンなデザイン
+
+- TanStack Query
+  - 効率的なデータ取得
+  - キャッシュ管理
+
+- SSG + SSRハイブリッドアプローチ
+  - パフォーマンスの最適化
+  - SEO対策
+
+# 出力形式
+コードのみを出力（説明なし）
 ```
 
 ### 4. インフラストラクチャのセットアップ
