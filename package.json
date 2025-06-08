@@ -1,0 +1,29 @@
+{
+  "name": "ai-code-reviewer",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:web\" \"npm run dev:api\"",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:api": "cd apps/api && bundle exec rails server",
+    "build": "npm run build:web",
+    "build:web": "npm run build --workspace=apps/web",
+    "test": "npm run test:web && npm run test:api",
+    "test:web": "npm run test --workspace=apps/web",
+    "test:api": "cd apps/api && bundle exec rspec",
+    "lint": "npm run lint:web",
+    "lint:web": "npm run lint --workspace=apps/web",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "prettier": "^3.2.5"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  }
+}

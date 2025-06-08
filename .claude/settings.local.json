@@ -3,8 +3,26 @@
     "allow": [
       "Bash(git pull:*)",
       "Bash(ls:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(mkdir:*)",
+      "Bash(npx create-next-app:*)",
+      "Bash(rm:*)",
+      "Bash(rails new:*)"
     ],
     "deny": []
+  },
+  "commandConfirmation": {
+    "skipConfirmation": true,
+    "allowedCommands": [
+      "mkdir",
+      "ls",
+      "git",
+      "find",
+      "cat",
+      "touch",
+      "rm",
+      "cp",
+      "mv"
+    ]
   }
 }

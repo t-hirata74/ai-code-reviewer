@@ -25,19 +25,19 @@ ai-code-reviewer/
 
 ### 1. 初期プロジェクトセットアップ
 ```
-# Task
-Create a monorepo project structure for ai-code-reviewer with Next.js 14 and Rails 7.1 API.
-Include basic configuration files and directory structure.
+# タスク
+Next.js 14とRails 7.1 APIを使用して、ai-code-reviewerのモノレポプロジェクト構造を作成してください。
+基本的な設定ファイルとディレクトリ構造を含めてください。
 
-# Context
-- Next.js 14 (App Router) for frontend
-- Rails 7.1 API-only for backend
+# コンテキスト
+- フロントエンドにはNext.js 14 (App Router)を使用
+- バックエンドにはRails 7.1 API-onlyを使用
 - TypeScript + Ruby 3.3
-- Directory structure should follow the monorepo pattern
-- Include essential configuration files (Docker, GitHub Actions, etc.)
+- ディレクトリ構造はモノレポパターンに従うこと
+- 必要な設定ファイル（Docker、GitHub Actionsなど）を含めること
 
-# Output format
-Only code. No explanations.
+# 出力形式
+コードのみ。説明は不要です。
 ```
 
 ### 2. バックエンド（Rails）のセットアップ

@@ -1,0 +1,44 @@
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Environment
+.env*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Dependencies
+node_modules/
+vendor/bundle/
+
+# Build artifacts
+.next/
+dist/
+tmp/
+log/
+
+# Test artifacts
+coverage/
+spec/reports/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# Development
+docker-compose*.yml
+Dockerfile.dev

@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+.next/
+dist/
+out/
+coverage/
+
+# Rails
+/apps/api/
+
+# Generated files
+*.min.js
+*.min.css
+
+# Data
+*.json
+*.lock
+*.log
