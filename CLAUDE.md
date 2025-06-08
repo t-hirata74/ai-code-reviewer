@@ -42,23 +42,55 @@ Next.js 14とRails 7.1 APIを使用して、ai-code-reviewerのモノレポプ�
 
 ### 2. バックエンド（Rails）のセットアップ
 ```
-# Task
-Set up Rails 7.1 API application with:
-1. GraphQL-Ruby integration
-2. PostgreSQL + pgvector configuration
-3. Sidekiq + Redis setup
-4. GitHub OAuth authentication
-5. Basic PR webhook controller
+# タスク
+Rails 7.1のAPIアプリケーションを以下の機能でセットアップ：
+1. GraphQL-Rubyの統合
+   - GraphQLを使用したAPIエンドポイントの構築
+   - フロントエンドとの効率的なデータ通信
 
-# Context
-- Rails 7.1 API-only mode
+2. PostgreSQL + pgvectorの設定
+   - PostgreSQL 16のデータベース設定
+   - pgvector拡張機能の導入（ベクトル検索用）
+   - コードレビュー結果の効率的な保存と検索
+
+3. Sidekiq + Redisのセットアップ
+   - 非同期処理のためのSidekiq設定
+   - ジョブキューとしてのRedis設定
+   - バックグラウンドでのコードレビュー処理
+
+4. GitHub OAuth認証
+   - GitHubアカウントでのログイン機能
+   - アクセストークンの管理
+   - ユーザー認証の実装
+
+5. PR Webhookコントローラ
+   - GitHubからのWebhook受信
+   - PRの変更検知
+   - レビュー処理の自動トリガー
+
+# 技術スタック
+- Rails 7.1（APIモード）
+  - API専用の軽量なRails設定
+  - フロントエンドとの分離
+
 - Ruby 3.3
-- PostgreSQL 16 with pgvector
-- Sidekiq 7 + Redis 7
-- GitHub OAuth for authentication
+  - 最新のRuby機能を活用
+  - パフォーマンスの最適化
 
-# Output format
-Only code. No explanations.
+- PostgreSQL 16 + pgvector
+  - 最新のPostgreSQL機能
+  - ベクトル検索による効率的なデータ検索
+
+- Sidekiq 7 + Redis 7
+  - 非同期処理の実装
+  - ジョブキューの管理
+
+- GitHub OAuth認証
+  - セキュアな認証システム
+  - GitHub APIとの連携
+
+# 出力形式
+コードのみを出力（説明なし）
 ```
 
 ### 3. フロントエンド（Next.js）のセットアップ

@@ -33,9 +33,9 @@ end
 
 group :development do
   gem "spring"
-  gem "rubocop", require: false
-  gem "rubocop-rails", require: false
-  gem "rubocop-rspec", require: false
+  # gem "rubocop", require: false
+  # gem "rubocop-rails", require: false
+  # gem "rubocop-rspec", require: false
 end
 
 group :test do
@@ -44,3 +44,10 @@ group :test do
   gem "webmock"
   gem "vcr"
 end
+gem "graphql-rails_logger", "~> 1.2"
+
+gem "neighbor", "~> 0.5.2"
+
+gem "omniauth", "~> 2.1"
+gem "omniauth-github", "~> 2.0"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
