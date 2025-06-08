@@ -6,7 +6,7 @@ class CreatePullRequests < ActiveRecord::Migration[7.1]
       t.string :state
       t.string :github_id
       t.references :repository, null: false, foreign_key: true
-      t.references :author, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.string :head_sha
       t.string :base_sha
 

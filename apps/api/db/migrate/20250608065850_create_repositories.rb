@@ -4,7 +4,7 @@ class CreateRepositories < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :full_name
       t.string :github_id
-      t.references :owner, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
       t.boolean :webhook_configured
 
       t.timestamps

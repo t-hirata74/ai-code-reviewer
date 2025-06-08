@@ -1,6 +1,5 @@
 -- Enable pgvector extension
 CREATE EXTENSION IF NOT EXISTS vector;
 
--- Create development and test databases
-CREATE DATABASE ai_code_reviewer_development;
+-- Create test database (development database is already created via POSTGRES_DB)
 CREATE DATABASE ai_code_reviewer_test;

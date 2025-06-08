@@ -14,7 +14,15 @@
       "Bash(npx shadcn@latest init:*)",
       "Bash(npm install)",
       "Bash(npm install:*)",
-      "Bash(npx shadcn@latest add:*)"
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(docker-compose up:*)",
+      "Bash(npm run dev:*)",
+      "Bash(docker-compose down:*)",
+      "Bash(docker-compose ps:*)",
+      "Bash(docker system prune:*)",
+      "Bash(docker volume prune:*)",
+      "Bash(docker-compose logs:*)",
+      "Bash(docker-compose restart:*)"
     ],
     "deny": []
   },
