@@ -1,59 +1,119 @@
-# CLAUDE.md
+# AI Code Reviewer - Claude Code Instructions
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+## System Context
+You are a senior Ruby/Rails & TypeScript engineer. Follow Ruby Style Guide and AirBnB JS style.
 
-## Project Overview
+## Project Structure
+```
+ai-code-reviewer/
+├─ apps/
+│  ├─ web/             # Next.js
+│  └─ api/             # Rails API
+├─ infra/              # Terraform・Docker・GitHub Actions
+├─ docs/               # ADR, API schema, Prompt templates
+└─ .github/workflows/
+```
 
-This is the ai-code-reviewer project, which is currently in its initial setup phase. The project aims to provide AI-powered code review functionality.
+## Development Flow
+1. **Cmd + K → "New Chat"** : このテンプレートを System に貼付
+2. 対象ファイル or ディレクトリを選択 → **Cmd + Esc** で "Explain / Refactor" を実行
+3. **Diff ペイン** で Accept / Reject
+4. テスト自動生成: `# write RSpec for previous diff`
+5. 上限トークン監視: `claude stats` or `anthropic-ratelimit-*` header をログ出力
 
-## Current State
+## Prompt Templates
 
-The repository is newly initialized with:
-- Basic git setup with remote: `git@github.com:t-hirata74/ai-code-reviewer.git`
-- Claude permissions configured in `.claude/settings.local.json` allowing git pull, ls, and find commands
-- No implementation code or project structure yet established
+### 1. 初期プロジェクトセットアップ
+```
+# Task
+Create a monorepo project structure for ai-code-reviewer with Next.js 14 and Rails 7.1 API.
+Include basic configuration files and directory structure.
 
-## Development Setup
+# Context
+- Next.js 14 (App Router) for frontend
+- Rails 7.1 API-only for backend
+- TypeScript + Ruby 3.3
+- Directory structure should follow the monorepo pattern
+- Include essential configuration files (Docker, GitHub Actions, etc.)
 
-Since the project has not yet been implemented, the first steps when working on this codebase should be:
+# Output format
+Only code. No explanations.
+```
 
-1. **Determine the technology stack** based on user requirements (e.g., Python, Node.js, Go)
-2. **Initialize the project** with appropriate configuration files (package.json, requirements.txt, etc.)
-3. **Set up the project structure** following best practices for the chosen technology
-4. **Configure development tools** including:
-   - Testing framework
-   - Linting and formatting tools
-   - Build/compilation process if needed
-   - CI/CD pipeline
+### 2. バックエンド（Rails）のセットアップ
+```
+# Task
+Set up Rails 7.1 API application with:
+1. GraphQL-Ruby integration
+2. PostgreSQL + pgvector configuration
+3. Sidekiq + Redis setup
+4. GitHub OAuth authentication
+5. Basic PR webhook controller
 
-## Architecture Considerations
+# Context
+- Rails 7.1 API-only mode
+- Ruby 3.3
+- PostgreSQL 16 with pgvector
+- Sidekiq 7 + Redis 7
+- GitHub OAuth for authentication
 
-When implementing the ai-code-reviewer:
+# Output format
+Only code. No explanations.
+```
 
-1. **Core Components** to consider:
-   - Code parsing and analysis engine
-   - AI integration layer (API clients for LLMs)
-   - Review rule configuration system
-   - Output formatting and reporting
-   - Version control integration (Git)
+### 3. フロントエンド（Next.js）のセットアップ
+```
+# Task
+Set up Next.js 14 application with:
+1. App Router configuration
+2. shadcn/ui integration
+3. TanStack Query setup
+4. Basic dashboard layout
+5. GitHub OAuth integration
 
-2. **Key Design Decisions** to make:
-   - CLI vs. Web interface vs. API service
-   - Local processing vs. cloud-based
-   - Supported programming languages
-   - Integration points (GitHub, GitLab, etc.)
+# Context
+- Next.js 14 with App Router
+- TypeScript
+- shadcn/ui for components
+- TanStack Query for data fetching
+- SSG + SSR hybrid approach
 
-## Commands
+# Output format
+Only code. No explanations.
+```
 
-Commands will be established once the technology stack is chosen. Typical commands to implement:
+### 4. インフラストラクチャのセットアップ
+```
+# Task
+Create infrastructure configuration:
+1. Docker Compose for development
+2. GitHub Actions CI workflow
+3. Basic Terraform configuration
+4. Environment variables template
 
-- **Build**: Compile/prepare the application
-- **Test**: Run the test suite
-- **Lint**: Check code quality
-- **Run**: Execute the code reviewer
+# Context
+- Docker Compose for local development
+- GitHub Actions for CI
+- Terraform for infrastructure (optional)
+- Environment variables management
 
-## Notes
+# Output format
+Only code. No explanations.
+```
 
-- The repository has Claude-specific permissions configured to allow basic file system operations
-- When setting up the project, ensure to update this file with actual commands and architecture details
-- Consider security implications when handling code review data and API keys
+## Environment Variables
+```
+GITHUB_APP_WEBHOOK_SECRET=...
+GITHUB_APP_PRIVATE_KEY=...
+ANTHROPIC_API_KEY=...
+DATABASE_URL=postgres://...
+REDIS_URL=redis://...
+FRONTEND_URL=https://ai-code-reviewer.dev
+```
+
+## Development Guidelines
+1. 各ステップで生成されたコードを適切にレビュー
+2. 必要に応じて修正を依頼
+3. テストの自動生成を活用
+4. 環境変数の管理に注意
+5. セキュリティに配慮した設定
